@@ -19,8 +19,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { COLORS, SIZES } from '../app/constants';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
-
-
 let jobmanagement = [
     {
         id: "0",

@@ -95,7 +95,7 @@ export default function App() {
       >
         {/*<Stack.Screen name="OnboardingScreen" component={OnboardingScreen} options={{ headerShown: false }} />*/}
 
-        {!user ? (
+        {user ? (
           <>
             <Stack.Screen name="StackNavigator" component={StackNavigator} options={{ headerShown: false }} />
 
@@ -116,15 +116,10 @@ export default function App() {
         ) : (
           <>
             <Stack.Screen name="GetStarted" component={GetStarted} options={{ headerShown: false }} />
-
             <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
-
             <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
-
             <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ headerShown: false }} />
-
             <Stack.Screen name="OTPVerification" component={OtpScreen} options={{ headerShown: false }} />
-
             <Stack.Screen name="SuccessVerification" component={SuccessVerification} options={{ headerShown: false }} />
 
 

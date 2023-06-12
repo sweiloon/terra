@@ -11,7 +11,7 @@ const Dots = ({ selected }) => {
                 height: 5,
                 width: 5,
                 marginHorizontal: 3,
-                backgroundColor,
+                backgroundColor,// sads
             }}
         />
     )

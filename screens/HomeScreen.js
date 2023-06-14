@@ -1,10 +1,10 @@
-import { ScrollView, StyleSheet, Text, View, Animated, Image, TouchableOpacity, Dimensions, Platform, Alert } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, Animated, Image, TouchableOpacity, Dimensions, Platform, Alert, Button, Pressable } from 'react-native'
 import React, { useState, useEffect, Component } from 'react'
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { markers, mapDarkStyle, mapStandardStyle } from '../model/mapData';
 import StarRating from '../components/StarRating';
-import SearchBar from '../components/Home/SearchBar';
+import SearchBar from './SearchBar';
 import LocationFilter from '../components/Home/LocationFilter';
 import { COLORS, FONTS, SIZES, images } from '../constants'
 
@@ -49,12 +49,34 @@ const HomeScreen = ({ navigation }) => {
         getPermissions();
     }, []);
 
-
-
-
-
     const _map = React.useRef();
     const _scrollView = React.useRef(null);
+
+    function renderProfile() {
+        return (
+            <View
+                style={{
+                    top: 33,
+                    left: 342,
+                    position: "absolute",
+                    zIndex: 1
+                }}
+            >
+                <Pressable activeOpacity={0.9} onPress={() => navigation.navigate('MyProfile')}>
+                    <Image
+                        source={images.user7}
+                        resizeMode="cover"
+                        style={{
+                            height: 52,
+                            width: 52,
+                            borderRadius: 70,
+                            bottom: 3
+                        }}
+                    />
+                </Pressable>
+            </View>
+        )
+    }
 
 
     return (
@@ -65,8 +87,8 @@ const HomeScreen = ({ navigation }) => {
                 style={styles.map}
                 initialRegion={state.region}
                 showsUserLocation={true}
-                showsCompass={true}
                 showsMyLocationButton={true}
+                mapPadding={{ top: 0, right: 0, bottom: 310, left: 30, }}
             >
 
                 <Marker
@@ -126,7 +148,10 @@ const HomeScreen = ({ navigation }) => {
                     </Callout>
                 </Marker>
 
+
             </MapView>
+            {renderProfile()}
+
 
 
             <SearchBar />
@@ -206,8 +231,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-
-
     },
     wrapper: {
         backgroundColor: '#F2F5FA',
@@ -216,7 +239,6 @@ const styles = StyleSheet.create({
     map: {
         width: '100%',
         height: '100%',
-
     },
     scrollView: {
         position: 'absolute',

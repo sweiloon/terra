@@ -3,6 +3,10 @@ import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 import { COLORS, FONTS, SIZES, images } from '../../constants'
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import {
+    Feather,
+
+} from '@expo/vector-icons'
 
 const Settings = ({ navigation }) => {
     const SECTIONS = [
@@ -65,11 +69,16 @@ const Settings = ({ navigation }) => {
         <LinearGradient style={{ flex: 1 }} colors={['rgba(137,215,188,0.4)', 'rgba(153,195,217,0.4)']}>
             <SafeAreaView>
                 <ScrollView contentContainerStyle={styles.container}>
-                    <View >
+                    <View style={{ flexDirection: 'row' }}>
+                        <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 5, marginRight: 6, paddingLeft: 20 }}>
+                            <Feather name="arrow-left" size={30} color={COLORS.black} />
+                        </TouchableOpacity>
                         <Text style={{
                             fontSize: 30,
                             fontWeight: 'bold',
-                            padding: 20,
+                            padding: 4,
+                            paddingLeft: 95
+
                         }}>Settings </Text>
                     </View>
 
@@ -117,7 +126,7 @@ export default Settings
 
 const styles = StyleSheet.create({
     container: {
-        paddingVertical: 24,
+        paddingVertical: 15,
     },
     section: {
         paddingHorizontal: 24,

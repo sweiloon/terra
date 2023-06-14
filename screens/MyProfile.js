@@ -14,7 +14,7 @@ import { auth } from '../firebase'
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 
-const ProfileScreen = ({ navigation }) => {
+const MyProfile = ({ navigation }) => {
     //Current Location Part 
     const [displayCurrentAddress, setDisplayCurrentAddress] = useState('Loading Location...')
     const [locationServicesEnabled, setLocationServicesEnabled] = useState(false)
@@ -102,7 +102,7 @@ const ProfileScreen = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 10, marginRight: 6 }}>
                     <Feather name="arrow-left" size={30} color={COLORS.black} />
                 </TouchableOpacity>
-                <Text style={{ ...FONTS.h2, marginTop: 15 }} >My Business</Text>
+                <Text style={{ fontSize: 28, fontWeight: 'bold', marginTop: 15 }} >Profile</Text>
                 <TouchableOpacity onPress={() => console.log('Pressed')} style={{ marginTop: 10, marginRight: 6 }}>
                     <Feather name="edit" size={24} color={COLORS.black} />
                 </TouchableOpacity>
@@ -399,7 +399,7 @@ const ProfileScreen = ({ navigation }) => {
     )
 }
 
-export default ProfileScreen
+export default MyProfile
 
 const styles = StyleSheet.create({
     logoutbutton: {

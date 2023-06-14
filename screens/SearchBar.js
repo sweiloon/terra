@@ -2,10 +2,10 @@ import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import Constants from 'expo-constants';
-import { COLORS, FONTS, SIZES, images } from '../../constants'
+import { COLORS, FONTS, SIZES, images } from '../constants'
 
 
-const SearchBar = ({ navigation }) => {
+const SearchBar = () => {
     return (
         <View style={styles.searchContainer}>
             <GooglePlacesAutocomplete
@@ -20,24 +20,10 @@ const SearchBar = ({ navigation }) => {
                     language: 'en',
                 }}
             />
-
-            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.openDrawer()}>
-                <Image
-                    source={images.user7}
-                    resizeMode="cover"
-                    style={{
-                        height: 48,
-                        width: 48,
-                        borderRadius: 70,
-                        bottom: 3,
-
-                    }}
-                />
-            </TouchableOpacity>
-
         </View>
     )
 }
+
 
 export default SearchBar
 

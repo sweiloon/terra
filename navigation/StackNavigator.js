@@ -6,7 +6,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/HomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
+import ProfileScreen from "../screens/MyBusiness";
 import TodoScreen from "../screens/TodoScreen";
 import FarmMngScreen from "../screens/FarmMngScreen";
 import DiscoverScreen from "../screens/DiscoverScreen"
@@ -14,6 +14,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { COLORS, FONTS, SIZES, images } from '../constants'
+import MyBusiness from "../screens/MyBusiness";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -111,8 +112,8 @@ const StackNavigator = () => {
       />
 
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
+        name="MyBusiness"
+        component={MyBusiness}
         options={{
           tabBarLabel: () => null,
           headerShown: false,

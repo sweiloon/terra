@@ -10,6 +10,8 @@ import {
   ResetPassword,
   SuccessVerification,
   ProfileScreen,
+  MyProfile,
+  SearchBar
 } from './screens'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
@@ -31,6 +33,7 @@ import Newfarm from './components/FarmMng/Newfarm'
 import Newzone from './components/FarmMng/Newzone'
 import Recorded from './components/FarmMng/Recorded'
 import { createDrawerNavigator } from '@react-navigation/drawer';
+
 
 
 SplashScreen.preventAutoHideAsync()
@@ -95,7 +98,7 @@ export default function App() {
       >
         {/*<Stack.Screen name="OnboardingScreen" component={OnboardingScreen} options={{ headerShown: false }} />*/}
 
-        {!user ? (
+        {user ? (
           <>
             <Stack.Screen name="StackNavigator" component={StackNavigator} options={{ headerShown: false }} />
             <Stack.Screen name='Farmdetail' component={Farmdetail} options={{ headerShown: false }} />
@@ -107,6 +110,8 @@ export default function App() {
             <Stack.Screen name='Fertilize' component={Fertilize} options={{ headerShown: false }} />
             <Stack.Screen name='Consumption' component={Consumption} options={{ headerShown: false }} />
             <Stack.Screen name='Recipe' component={RecipeScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="SearchBar" component={SearchBar} options={{ headerShown: false }} />
+            <Stack.Screen name="MyProfile" component={MyProfile} options={{ headerShown: false }} />
             <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
           </>
         ) : (

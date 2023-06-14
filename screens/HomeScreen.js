@@ -6,6 +6,7 @@ import { markers, mapDarkStyle, mapStandardStyle } from '../model/mapData';
 import StarRating from '../components/StarRating';
 import SearchBar from '../components/Home/SearchBar';
 import LocationFilter from '../components/Home/LocationFilter';
+import { COLORS, FONTS, SIZES, images } from '../constants'
 
 
 
@@ -15,7 +16,7 @@ const CARD_HEIGHT = 200;
 const CARD_WIDTH = width * 0.6;
 const SPACING_FOR_CARD_INSET = width * 0.1 - 10;
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     const initialMapState = {
         markers,
         region: {
@@ -127,9 +128,11 @@ const HomeScreen = () => {
 
             </MapView>
 
+
             <SearchBar />
 
             <LocationFilter />
+
 
             <Animated.ScrollView
                 ref={_scrollView}

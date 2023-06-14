@@ -30,12 +30,12 @@ import Farmdetail from './components/FarmMng/Farmdetail'
 import Newfarm from './components/FarmMng/Newfarm'
 import Newzone from './components/FarmMng/Newzone'
 import Recorded from './components/FarmMng/Recorded'
-import SearchBar from './components/Home/SearchBar'
-import MyProfile from './components/Home/MyProfile'
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
 SplashScreen.preventAutoHideAsync()
 const Stack = createNativeStackNavigator()
+const Drawer = createDrawerNavigator();
 
 export default function App() {
 
@@ -95,10 +95,9 @@ export default function App() {
       >
         {/*<Stack.Screen name="OnboardingScreen" component={OnboardingScreen} options={{ headerShown: false }} />*/}
 
-        {user ? (
+        {!user ? (
           <>
             <Stack.Screen name="StackNavigator" component={StackNavigator} options={{ headerShown: false }} />
-
             <Stack.Screen name='Farmdetail' component={Farmdetail} options={{ headerShown: false }} />
             <Stack.Screen name='Recorded' component={Recorded} options={{ headerShown: false }} />
             <Stack.Screen name='Newfarm' component={Newfarm} options={{ headerShown: false }} />
@@ -109,9 +108,6 @@ export default function App() {
             <Stack.Screen name='Consumption' component={Consumption} options={{ headerShown: false }} />
             <Stack.Screen name='Recipe' component={RecipeScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
-            <Stack.Screen name="SearchBar" component={SearchBar} options={{ headerShown: false }} />
-            <Stack.Screen name='MyProfile' component={MyProfile} options={{ headerShown: false }} />
-            <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{ headerShown: false }} />
           </>
         ) : (
           <>

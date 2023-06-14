@@ -21,8 +21,7 @@ const SearchBar = ({ navigation }) => {
                 }}
             />
 
-
-            <TouchableOpacity activeOpacity={0.8} onPress={() => console.log('Press')}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.openDrawer()}>
                 <Image
                     source={images.user7}
                     resizeMode="cover"
@@ -35,6 +34,7 @@ const SearchBar = ({ navigation }) => {
                     }}
                 />
             </TouchableOpacity>
+
         </View>
     )
 }

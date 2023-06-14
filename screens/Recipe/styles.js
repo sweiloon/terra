@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     paddingVertical: 8,
-    marginTop: 250
+    marginTop: 310
   },
   paginationDot: {
     width: 8,

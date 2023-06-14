@@ -79,7 +79,7 @@ const StackNavigator = () => {
         }}
       />
 
-      <Tab.Screen
+      {/*<Tab.Screen
         name="Farm"
         component={FarmMngScreen}
         options={{
@@ -93,7 +93,7 @@ const StackNavigator = () => {
             ),
         }}
 
-      />
+      />*/}
 
       <Tab.Screen
         name="My Task"

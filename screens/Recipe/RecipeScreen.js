@@ -6,6 +6,7 @@ import {
   Image,
   Dimensions,
   TouchableHighlight,
+  TouchableOpacity
 } from "react-native";
 import styles from "./styles";
 import Carousel, { Pagination } from "react-native-snap-carousel";
@@ -14,6 +15,9 @@ import {
   getCategoryName,
   getCategoryById,
 } from "../../src/data/MockDataAPI";
+import {
+  Feather
+} from '@expo/vector-icons'
 
 const { width: viewportWidth } = Dimensions.get("window");
 
@@ -34,8 +38,11 @@ const RecipeScreen = (props) => {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.carouselContainer}>
+      <View style={styles.carouselContainer} >
         <View style={styles.carousel}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 10, marginRight: 6, padding: 10 }}>
+            <Feather name="arrow-left" size={26} color='black' />
+          </TouchableOpacity>
           <Carousel
             ref={slider1Ref}
             data={item.photosArray}

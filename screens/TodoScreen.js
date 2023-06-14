@@ -7,7 +7,7 @@ import events from '../assets/data/events.json'
 
 const TodoScreen = () => {
 
-    const renderItem = (reservation: AgendaEntry, isFirst: boolean) => {
+    const renderItem = (reservation, isFirst) => {
         const fontSize = isFirst ? 16 : 14;
         const color = isFirst ? "black" : "#43515c";
 

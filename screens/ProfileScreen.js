@@ -102,7 +102,7 @@ const ProfileScreen = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginTop: 10, marginRight: 6 }}>
                     <Feather name="arrow-left" size={30} color={COLORS.black} />
                 </TouchableOpacity>
-                <Text style={{ ...FONTS.h2, marginTop: 15 }} >Profile</Text>
+                <Text style={{ ...FONTS.h2, marginTop: 15 }} >My Business</Text>
                 <TouchableOpacity onPress={() => console.log('Pressed')} style={{ marginTop: 10, marginRight: 6 }}>
                     <Feather name="edit" size={24} color={COLORS.black} />
                 </TouchableOpacity>

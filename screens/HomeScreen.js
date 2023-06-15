@@ -110,44 +110,6 @@ const HomeScreen = ({ navigation }) => {
                     </Callout>
                 </Marker>
 
-                <Marker
-                    coordinate={{
-                        latitude: 3.003131,
-                        longitude: 101.700341,
-                    }}
-                    image={require('../assets/icons/map_marker.png')}
-                >
-                    <Callout tooltip>
-                        <View>
-                            <View style={{ flexDirection: 'column', alignSelf: 'flex-start', borderRadius: 8, padding: 8, width: 130, backgroundColor: 'white', height: 80 }}>
-                                <Text style={{ fontSize: 15 }}>Best Office(KL)</Text>
-                                <Image style={{ width: 85, height: 45, resizeMode: 'contain', alignSelf: 'center' }} source={require('../assets/icons/best.png')} />
-                            </View>
-                            <View style={{ backgroundColor: 'transparent', borderColor: 'transparent', borderTopColor: '#007a87', borderWidth: 16, alignSelf: 'center', marginTop: -0.5 }} />
-                            <View style={{ backgroundColor: 'transparent', borderColor: 'transparent', borderTopColor: '#fff', borderWidth: 16, alignSelf: 'center', marginTop: -32 }} />
-                        </View>
-                    </Callout>
-                </Marker>
-
-                <Marker
-                    coordinate={{
-                        latitude: 3.036535,
-                        longitude: 101.700999,
-                    }}
-                    image={require('../assets/icons/map_marker.png')}
-                >
-                    <Callout tooltip>
-                        <View>
-                            <View style={{ flexDirection: 'column', alignSelf: 'flex-start', borderRadius: 8, padding: 8, width: 130, backgroundColor: 'white', height: 80 }}>
-                                <Text style={{ fontSize: 15 }}>Best Office(KL)</Text>
-                                <Image style={{ width: 85, height: 45, resizeMode: 'contain', alignSelf: 'center' }} source={require('../assets/icons/best.png')} />
-                            </View>
-                            <View style={{ backgroundColor: 'transparent', borderColor: 'transparent', borderTopColor: '#007a87', borderWidth: 16, alignSelf: 'center', marginTop: -0.5 }} />
-                            <View style={{ backgroundColor: 'transparent', borderColor: 'transparent', borderTopColor: '#fff', borderWidth: 16, alignSelf: 'center', marginTop: -32 }} />
-                        </View>
-                    </Callout>
-                </Marker>
-
 
             </MapView>
             {renderProfile()}

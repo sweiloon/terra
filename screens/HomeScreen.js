@@ -7,16 +7,14 @@ import StarRating from '../components/StarRating';
 import SearchBar from './SearchBar';
 import LocationFilter from '../components/Home/LocationFilter';
 import { COLORS, FONTS, SIZES, images } from '../constants'
-
-
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 const { width, height } = Dimensions.get("window");
 const CARD_HEIGHT = 200;
 const CARD_WIDTH = width * 0.6;
 const SPACING_FOR_CARD_INSET = width * 0.1 - 10;
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ dispatch, navigation }) => {
     const initialMapState = {
         markers,
         region: {
@@ -29,7 +27,6 @@ const HomeScreen = ({ navigation }) => {
     const [state, setState] = React.useState(initialMapState);
     const [location, setLocation] = useState();
     const [address, setAddress] = useState();
-
 
     Location.setGoogleApiKey('AIzaSyAB5NVPeZjIn2mril7ohmuii24wzDB3g4c');
 
@@ -78,6 +75,8 @@ const HomeScreen = ({ navigation }) => {
         )
     }
 
+    const mapRef = React.createRef();
+
 
     return (
         <View style={styles.container}>
@@ -112,6 +111,8 @@ const HomeScreen = ({ navigation }) => {
 
 
             </MapView>
+
+
             {renderProfile()}
 
 
@@ -119,6 +120,8 @@ const HomeScreen = ({ navigation }) => {
             <SearchBar />
 
             <LocationFilter />
+
+
 
 
             <Animated.ScrollView
@@ -269,5 +272,16 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 14,
         fontWeight: 'bold'
+    },
+    myLocationIcon: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+
+        padding: 100,
+        zIndex: 1,
+        top: 100,
+        fontSize: 50
+
     }
 })

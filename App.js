@@ -98,7 +98,7 @@ export default function App() {
       >
         {/*<Stack.Screen name="OnboardingScreen" component={OnboardingScreen} options={{ headerShown: false }} />*/}
 
-        {user ? (
+        {!user ? (
           <>
             <Stack.Screen name="StackNavigator" component={StackNavigator} options={{ headerShown: false }} />
             <Stack.Screen name='Farmdetail' component={Farmdetail} options={{ headerShown: false }} />
